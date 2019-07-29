@@ -57,7 +57,7 @@
 
 .no-padding{padding:0!important;}
 .no-margin{margin:0!important;}
-
+.hidden,.hide{display:none!important}
 
 @media(max-width:767px){
   .table-responsive .dropdown-menu {position: static !important;margin-left:-100%;}
