@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vali Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/user.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <section class="material-half-bg">
+    </section>
+    <section class="login-content">
+      <div class="login-box">
+        <form class="login-form" action="index.html">
+          <h2 class="login-head">
+            Vali Admin
+          </h2>
+          <div class="form-group has-feedback">
+            <input class="form-control" type="text" placeholder="用户名" autofocus  required="required">
+            <span class="form-control-feedback">
+              <i class="fa fa-user"></i>
+            </span>
+          </div>
+          <div class="form-group  has-feedback">
+            <input class="form-control" type="password" placeholder="密码" required="required">
+            <span class="form-control-feedback">
+              <i class="fa fa-lock"></i>
+            </span>
+          </div>
+          <div class="form-group has-feedback">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="验证码"  required="required">
+              <span class="input-group-addon" style="margin:0;padding:0;">
+                <img src="assets/images/captcha.jpg" width="120" height="38" onclick="this.src=this.src+'?'">
+              </span>
+            </div>
+          </div>
+          <div class="form-group btn-container">
+            <button class="btn btn-primary btn-block "><i class="fa fa-sign-in fa-lg fa-fw"></i> 登 录 </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+  <script src="assets/js/jquery-2.1.4.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</html>

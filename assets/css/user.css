@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+.btn{border-radius:0!important}
+.btn:hover, .btn:focus, .btn.focus {
+  color: #fff;
+  text-decoration: none;
+  -webkit-transform: none!important;
+          transform: none!important;
+  -webkit-box-shadow: none!important;
+          box-shadow: none!important;
+  outline: none;
+}
+.login-content .login-box{
+    min-width:400px;min-height:400px;
+}
+.material-half-bg{
+    background:url(../images/bg.jpg) left top repeat-x;
+}
+.login-content .login-box .login-head{
+    margin-top:10px;margin-bottom:30px;
+}
+.login-content .login-box .form-group{
+    margin-top:15px;margin-bottom:20px;
+}
+.main-header .top-nav{
+    margin-right: 1px;
+}
+.main-header .top-nav > li > a.user-info-heading{
+  padding-top: 10px;padding-bottom: 10px;
+}
+.content-wrapper{
+    padding:10px;
+}
+.radio label, .checkbox label{padding-left:0!important;padding-right:20px;}
+.box{
+  width:100%;margin-bottom:5px;
+  background: #ffffff;
+  border-radius: 0px;
+  padding: 0;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  padding-bottom:10px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.box table.table{margin-bottom:10px;}
+.box table.table div.btn-group .btn{padding:3px 6px;}
+.box-header{height:45px;line-height:45px;margin-bottom:5px;border-bottom:2px solid #efefef}
+.box-header-title{float:left;height:45px;line-height: 45px;padding:0 20px;border-bottom:2px solid #009688;font-weight:bolder;}
+.box-header-toolbar{float:right;margin-right:15px;}
+.box-search,.box-body,.box-footer{padding:5px 20px;clear:both;}
+.box-search:after,.box-body:after,.box-footer:after,.box-search:after,.box-body:after,.box-footer:after{clear:both;content:" ";display:table}
+.box-row{width:100%;margin-bottom:10px;clear:both;}
+.box form.form-inline div.form-group{margin-right:5px;}
+
+.no-padding{padding:0!important;}
+.no-margin{margin:0!important;}
+
+
+@media(max-width:767px){
+  .table-responsive .dropdown-menu {position: static !important;margin-left:-100%;}
+  .table-responsive .dropdown-backdrop{display:none!important}
+}
+
+@media(min-width:768px) and (max-width:991px){
+  .table-responsive{overflow: visible;}
+}
+
+@media (min-width: 992px){
+  .table-responsive {overflow: visible;}
+}
