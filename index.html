@@ -55,13 +55,14 @@
         <section class="sidebar">
           <!-- Sidebar Menu-->
           <ul class="sidebar-menu">
-            <li><a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
-            <li class="treeview active"><a href="#"><i class="fa fa-laptop"></i><span>UI Elements</span><i class="fa fa-angle-right"></i></a>
+            <li class="treeview">
+              <a href="#"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
               <ul class="treeview-menu">
-                <li class="active"><a href="bootstrap-components.html"><i class="fa fa-caret-right"></i> Bootstrap Elements</a><span></span></li>
+                <li><a href="bootstrap-components.html"><i class="fa fa-caret-right"></i> Bootstrap Elements</a></li>
                 <li><a href="http://fontawesome.io/icons/" target="_blank"><i class="fa fa-caret-right"></i> Font Icons</a></li>
                 <li><a href="ui-cards.html"><i class="fa fa-caret-right"></i> Cards</a></li>
                 <li><a href="widgets.html"><i class="fa fa-caret-right"></i> Widgets</a></li>
+                <li><a href="index.html"><i class="fa fa-caret-right"></i> Dashboard 1</a></li>
               </ul>
             </li>
             <li><a href="charts.html"><i class="fa fa-pie-chart"></i><span>Charts</span></a></li>
@@ -140,6 +141,209 @@
       <div class="content-wrapper">
         <div class="row">
           <div class="col-xs-12">
+            
+            <div class="box-tabs">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#home" data-toggle="tab">数据表/搜索</a></li>
+                <li><a href="#profile" data-toggle="tab">数据表/搜索1</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane fade in active" id="home">                          
+                  <div class="box-body">
+                    <form class="form-inline">
+                        <div class="box-row">
+                          <div class="form-group">
+                            <label class="control-label">多选平台：</label>
+                            <select name="fplats[]" class="form-control select2 " multiple="" style="width:280px;">
+                              <option value="">请选择</option>
+                              <option value="8">测试安卓【3】</option>
+                              <option value="9">Google play【3】</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label">多选渠道：</label>
+                            <select name="fplatforms[]" class="form-control select2" style="width:280px;">
+                              <option value="">请选择</option>
+                              <option value="1014">Google Play-繁体【1014】</option>
+                              <option value="1018">App Store-繁体【1018】</option>
+                              <option value="0">零渠道【0】</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="box-row">
+                          <div class="form-group">
+                            <label class="control-label">开始日期：</label>
+                            <div class="input-group">
+                              <input class="form-control datepicker" type="text" placeholder="开始日期" name="fsdate" value="" autocomplete="off">
+                              <span class="input-group-addon"> - </span>
+                              <input class="form-control datepicker" type="text" placeholder="结束日期" name="fedate" value="2019-06-12" autocomplete="off">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <button class="btn btn-primary icon-btn" type="submit" name="search" value="search"><i class="fa fa-fw fa-lg fa-check-circle"></i>查询</button>
+                            <button class="btn btn-primary icon-btn" type="submit" name="export" value="export"><i class="fa fa-fw fa-lg fa-download"></i>导出</button>
+                          </div>
+                        </div>
+                    </form>
+                  </div>
+                  <div class="box-body">                  
+                      <div class="table-responsive">                      
+                        <table class="table table-hover table-bordered echarts-table-line">
+                          <thead>
+                            <tr>
+                              <th>ID</th><th>用户</th><th>日期</th><th>状态</th><th>原因</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>183</td><td>约翰·多伊</td><td>2014年11月7日</td><td><span class="label label-success">批准</span></td>
+                              <td>
+                                  <div class="btn-group">
+                                      <a class="dropdown-toggle" href="javascript:;" data-toggle="dropdown" aria-expanded="true">
+                                          <i class="fa fa-list"></i>
+                                      </a>
+                                      <ul class="dropdown-menu dropdown-menu-right">
+                                          <li><a href="">编辑</a></li>
+                                          <li><a href="javascript:;" onclick="layer_confirm('确定删除吗?','')">删除</a></li>
+                                      </ul>
+                                  </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>219</td><td>亚历山大皮尔斯</td><td>2014年11月7日</td><td><span class="label label-warning">有待</span></td>
+                              <td>
+                                  <div class="btn-group">
+                                      <a class="dropdown-toggle" href="javascript:;" data-toggle="dropdown" aria-expanded="true">
+                                          <i class="fa fa-list"></i>
+                                      </a>
+                                      <ul class="dropdown-menu dropdown-menu-right">
+                                          <li><a href="">编辑</a></li>
+                                          <li><a href="javascript:;" onclick="layer_confirm('确定删除吗?','')">删除</a></li>
+                                      </ul>
+                                  </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>657</td><td>Bob Doe</td><td>2014年11月7日</td><td><span class="label label-primary">批准</span></td>
+                              <td>
+                                  <div class="btn-group">
+                                      <a class="dropdown-toggle" href="javascript:;" data-toggle="dropdown" aria-expanded="true">
+                                          <i class="fa fa-list"></i>
+                                      </a>
+                                      <ul class="dropdown-menu dropdown-menu-right">
+                                          <li><a href="">编辑</a></li>
+                                          <li><a href="javascript:;" onclick="layer_confirm('确定删除吗?','')">删除</a></li>
+                                      </ul>
+                                  </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
+                  <div class="box-footer">
+                      <ul class="pagination no-margin pull-right">
+                        <li class="previous disabled ">
+                            <a href="javascript:;">&lt;&lt;</a>
+                        </li>
+                        <li class="active"><a href="javascript:;">1</a></li>
+                        <li class=""><a href="?page=2">2</a></li>
+                        <li class=""><a href="?page=3">3</a></li>
+                        <li class=""><a href="?page=4">4</a></li>
+                        <li class=""><a href="?page=5">5</a></li>
+                        <li class=""><a href="?page=6">6</a></li>
+                        <li class=""><a href="?page=7">7</a></li>
+                        <li class=""><a href="?page=8">8</a></li>
+                        <li class=""><a href="?page=9">9</a></li>
+                        <li class="next  ">
+                            <a href="?page=9">&gt;&gt;</a>
+                        </li>
+                      </ul>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="profile">
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <label for="inputName" class="col-sm-2 control-label">名称</label>
+                      <div class="col-sm-9">
+                        <input type="email" class="form-control" id="inputName" placeholder="Name">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputEmail" class="col-sm-2 control-label">电子邮件</label>
+                      <div class="col-sm-9">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputName" class="col-sm-2 control-label">名称</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputName" placeholder="Name">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputExperience" class="col-sm-2 control-label">经验</label>
+                      <div class="col-sm-9">
+                        <textarea class="form-control" id="inputExperience" placeholder="Experience" rows="5"></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputSkills" class="col-sm-2 control-label">技能</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">复选框</label>
+                      <div class="col-sm-9">
+                        <div class="checkbox">
+                          <label><input type="checkbox" name="c1" class="icheck" /> 苹果</label>
+                          <label><input type="checkbox" name="c1" class="icheck" /> 香蕉</label>
+                          <label><input type="checkbox" name="c1" class="icheck" /> 菠萝</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">单选框</label>
+                      <div class="col-sm-9">
+                        <div class="checkbox">
+                          <label><input type="radio" name="r1" class="icheck"> 苹果 </label>
+                          <label><input type="radio" name="r1" class="icheck"> 香蕉 </label>
+                          <label><input type="radio" name="r1" class="icheck"> 菠萝 </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputName" class="col-sm-2 control-label">日期</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control datepicker" id="inputName" placeholder="Name">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputName" class="col-sm-2 control-label">日期时间</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control datetimepicker" id="inputName" placeholder="Name">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="inputName" class="col-sm-2 control-label">仅时间</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control timepicker" id="inputName" placeholder="Name">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-9">
+                        <button type="submit" class="btn btn-danger">提交</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
             <div class="box">
                 <div class="box-header">
                     <div class="box-header-title">数据表/搜索</div>
@@ -264,112 +468,6 @@
                 </div>
             </div>
 
-            <div class="box">
-              <div class="box-header">
-                <div class="box-header-title">数据表/搜索</div>
-              </div>        
-              <div class="box-body">
-                <form class="form-inline">
-                    <div class="box-row">
-                      <div class="form-group">
-                        <label class="control-label">多选平台：</label>
-                        <select name="fplats[]" class="form-control select2 " multiple="" style="width:280px;">
-                          <option value="">请选择</option>
-                          <option value="8">测试安卓【3】</option>
-                          <option value="9">Google play【3】</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label">多选渠道：</label>
-                        <select name="fplatforms[]" class="form-control select2" style="width:280px;">
-                          <option value="">请选择</option>
-                          <option value="1014">Google Play-繁体【1014】</option>
-                          <option value="1018">App Store-繁体【1018】</option>
-                          <option value="0">零渠道【0】</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="box-row">
-                      <div class="form-group">
-                        <label class="control-label">开始日期：</label>
-                        <div class="input-group">
-                          <input class="form-control datepicker" type="text" placeholder="开始日期" name="fsdate" value="" autocomplete="off">
-                          <span class="input-group-addon"> - </span>
-                          <input class="form-control datepicker" type="text" placeholder="结束日期" name="fedate" value="2019-06-12" autocomplete="off">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <button class="btn btn-primary icon-btn" type="submit" name="search" value="search"><i class="fa fa-fw fa-lg fa-check-circle"></i>查询</button>
-                        <button class="btn btn-primary icon-btn" type="submit" name="export" value="export"><i class="fa fa-fw fa-lg fa-download"></i>导出</button>
-                      </div>
-                    </div>
-                </form>
-              </div>
-              <div class="box-body">                  
-                  <div class="table-responsive">                      
-                    <table class="table table-hover table-bordered echarts-table-line">
-                      <thead>
-                        <tr>
-                          <th>ID</th><th>用户</th><th>日期</th><th>状态</th><th>原因</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>183</td><td>约翰·多伊</td><td>2014年11月7日</td><td><span class="label label-success">批准</span></td>
-                          <td>
-                              <div class="btn-group">
-                                  <a href="javascript:;" class="btn btn-primary">编辑</a>
-                                  <a href="javascript:;" class="btn btn-danger">删除</a>
-                                  <a href="javascript:;" class="btn btn-info">导出</a>
-                              </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>219</td><td>亚历山大皮尔斯</td><td>2014年11月7日</td><td><span class="label label-warning">有待</span></td>
-                          <td>
-                              <div class="btn-group">
-                                  <a href="javascript:;" class="btn btn-primary">编辑</a>
-                                  <a href="javascript:;" class="btn btn-danger">删除</a>
-                                  <a href="javascript:;" class="btn btn-info">导出</a>
-                              </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>657</td><td>Bob Doe</td><td>2014年11月7日</td><td><span class="label label-primary">批准</span></td>
-                          <td>
-                              <div class="btn-group">
-                                  <a href="javascript:;" class="btn btn-primary">编辑</a>
-                                  <a href="javascript:;" class="btn btn-danger">删除</a>
-                                  <a href="javascript:;" class="btn btn-info">导出</a>
-                              </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-              </div>
-              <div class="box-footer">
-                  <div class="box-row">
-                    <ul class="pagination no-margin pull-right">
-                      <li class="previous disabled ">
-                          <a href="javascript:;">&lt;&lt;</a>
-                      </li>
-                      <li class="active"><a href="javascript:;">1</a></li>
-                      <li class=""><a href="?page=2">2</a></li>
-                      <li class=""><a href="?page=3">3</a></li>
-                      <li class=""><a href="?page=4">4</a></li>
-                      <li class=""><a href="?page=5">5</a></li>
-                      <li class=""><a href="?page=6">6</a></li>
-                      <li class=""><a href="?page=7">7</a></li>
-                      <li class=""><a href="?page=8">8</a></li>
-                      <li class=""><a href="?page=9">9</a></li>
-                      <li class="next  ">
-                          <a href="?page=9">&gt;&gt;</a>
-                      </li>
-                    </ul>
-                  </div>
-              </div>
-            </div>
 
             <div class="box">
               <div class="box-header">

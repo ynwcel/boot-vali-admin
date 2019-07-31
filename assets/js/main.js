@@ -11,6 +11,29 @@ height:"100%",position:"absolute",top:0,display:a.alwaysVisible&&a.railVisible?"
 h.hover(function(){w()},function(){p()});c.hover(function(){y=!0},function(){y=!1});b.hover(function(){r=!0;w();p()},function(){r=!1;p()});b.bind("touchstart",function(a,b){a.originalEvent.touches.length&&(A=a.originalEvent.touches[0].pageY)});b.bind("touchmove",function(b){k||b.originalEvent.preventDefault();b.originalEvent.touches.length&&(m((A-b.originalEvent.touches[0].pageY)/a.touchScrollStep,!0),A=b.originalEvent.touches[0].pageY)});x();"bottom"===a.start?(c.css({top:b.outerHeight()-c.outerHeight()}),
 m(0,!0)):"top"!==a.start&&(m(e(a.start).position().top,null,!0),a.alwaysVisible||c.hide());window.addEventListener?(this.addEventListener("DOMMouseScroll",v,!1),this.addEventListener("mousewheel",v,!1)):document.attachEvent("onmousewheel",v)}});return this}});e.fn.extend({slimscroll:e.fn.slimScroll})})(jQuery);
 
+
+/*! jquery.cookie v1.4.1 | MIT */
+!function(a){"function"==typeof define&&define.amd?define(["jquery"],a):"object"==typeof exports?a(require("jquery")):a(jQuery)}(function(a){function b(a){return h.raw?a:encodeURIComponent(a)}function c(a){return h.raw?a:decodeURIComponent(a)}function d(a){return b(h.json?JSON.stringify(a):String(a))}function e(a){0===a.indexOf('"')&&(a=a.slice(1,-1).replace(/\\"/g,'"').replace(/\\\\/g,"\\"));try{return a=decodeURIComponent(a.replace(g," ")),h.json?JSON.parse(a):a}catch(b){}}function f(b,c){var d=h.raw?b:e(b);return a.isFunction(c)?c(d):d}var g=/\+/g,h=a.cookie=function(e,g,i){if(void 0!==g&&!a.isFunction(g)){if(i=a.extend({},h.defaults,i),"number"==typeof i.expires){var j=i.expires,k=i.expires=new Date;k.setTime(+k+864e5*j)}return document.cookie=[b(e),"=",d(g),i.expires?"; expires="+i.expires.toUTCString():"",i.path?"; path="+i.path:"",i.domain?"; domain="+i.domain:"",i.secure?"; secure":""].join("")}for(var l=e?void 0:{},m=document.cookie?document.cookie.split("; "):[],n=0,o=m.length;o>n;n++){var p=m[n].split("="),q=c(p.shift()),r=p.join("=");if(e&&e===q){l=f(r,g);break}e||void 0===(r=f(r))||(l[q]=r)}return l};h.defaults={},a.removeCookie=function(b,c){return void 0===a.cookie(b)?!1:(a.cookie(b,"",a.extend({},c,{expires:-1})),!a.cookie(b))}});
+
+;(function($){
+	var win_href = window.location.href;
+	$("ul.sidebar-menu li a").each(function(i,v){
+		var el = $(this);
+		var el_href = el.attr('href');
+		if(win_href.indexOf(el_href)>=0 && el_href != "#"){
+			el.closest('li').addClass('active always-open').closest('li.treeview').addClass('active always-open');		
+			$.cookie('boot_vali_last_sidebar_href',el_href);	
+			return false;
+		}
+	})
+	if($('ul.sidebar-menu li a.active').length<=0){
+		var last_href = $.cookie('boot_vali_last_sidebar_href');
+		if(last_href){
+			$("ul.sidebar-menu li a[href='"+last_href+"']").closest('li').addClass('active always-open').closest('li.treeview').addClass('active always-open');
+		}
+	}
+}(jQuery));
+
 $(function () {
 	"use strict";
 
@@ -67,7 +90,7 @@ $(function () {
 			var checkElement = $this.next();
 
 			//Check if the next element is a menu and is visible
-			if ((checkElement.is('.treeview-menu')) && (checkElement.is(':visible'))) {
+			if ((checkElement.is('.treeview-menu')) && (checkElement.is(':visible')) && (!checkElement.closest('li').hasClass('always-open')) ) {
 				//Close the menu
 				checkElement.slideUp(animationSpeed, function () {
 						checkElement.removeClass('menu-open');
@@ -81,7 +104,7 @@ $(function () {
 				//Get the parent menu
 				var parent = $this.parents('ul').first();
 				//Close all open menus within the parent
-				var ul = parent.find('ul:visible').slideUp(animationSpeed);
+				var ul = parent.find('li').not('.always-open').find('ul:visible').slideUp(animationSpeed);
 				//Remove the menu-open class from the parent
 				ul.removeClass('menu-open');
 				//Get the parent li
@@ -91,8 +114,8 @@ $(function () {
 				checkElement.slideDown(animationSpeed, function () {
 					//Add the class active to the parent li
 					checkElement.addClass('menu-open');
-					parent.find('li.active').removeClass('active');
-					parent_li.addClass('active');
+					parent.find('li.active').not('.always-open').removeClass('active');
+					//parent_li.addClass('active');
 				});
 			}
 			//if this isn't a link, prevent the page from being redirected
@@ -133,4 +156,5 @@ $(function () {
 		$('.sidebar').css("overflow","visible");
 		$('.main-sidebar').find(".slimScrollDiv").css("overflow","visible");
 	}
+
 });

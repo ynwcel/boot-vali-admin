@@ -14403,7 +14403,7 @@ be a descendant of the grid when it is being dragged.
     background-color: inherit;
   }
   .sidebar-mini.sidebar-collapse .sidebar-menu > li:hover > .treeview-menu {
-    top: 45px;
+    /*top: 45px;*/
     margin-left: 0;
   }
   .sidebar-mini.sidebar-collapse .main-sidebar .user-panel > .info {
